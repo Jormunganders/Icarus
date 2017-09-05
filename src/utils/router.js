@@ -1,1 +1,0 @@
-const SIGN_UP = "/account/index.js";

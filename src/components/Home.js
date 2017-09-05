@@ -2,13 +2,9 @@ import React from "react";
 
 const Home = () => (
     <div>
-        <h1>-- Icarus --</h1>
-        <h2>Home</h2>
-        <ul>
-            <li>SignUp</li>
-            <li>SignIn</li>
-        </ul>
-        <hr/>
+        <h2>Hello World</h2>
+        <img src="http://wx2.sinaimg.cn/mw690/4deda15fly1fiyk63wo3rj21qc2iv1l1.jpg"
+             alt="谭松韵"/>
     </div>
 );
 
