@@ -7,8 +7,11 @@ import './Header.css';
 
 const Header = () => (
     <div className="App-header">
-        <h1><Link to={HOME}>Icarus</Link></h1>
-        <Link to={SIGN_UP}>Sign up</Link>
+        <h2 className="header-title"><Link to={HOME}>Icarus</Link></h2>
+        <ul>
+            <li><Link to={SIGN_UP}>Sign up</Link></li>
+        </ul>
+        <hr/>
     </div>
 );
 

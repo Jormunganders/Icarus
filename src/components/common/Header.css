@@ -1,6 +1,15 @@
 .App-header {
-    background-color: #37e000;
-    height: 150px;
-    padding: 20px;
-    color: white;
+    background-color: white;
+    height: 5rem;
+    position: relative;
+    align-items: center;
+}
+
+.header-title {
+    alignment: left;
+    color: #4a78da;
+}
+
+.account {
+    alignment: right;
 }
