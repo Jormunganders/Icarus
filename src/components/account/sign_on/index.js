@@ -2,6 +2,7 @@ import React from "react";
 import {EditText} from "../../common/EditText";
 import {VERIFY} from "../../../utils/Api";
 import {getVerify, signOn} from "../../../utils/Service";
+import {printCookie, setCookie} from "../../../utils/CookieUtils";
 
 class SignOn extends React.Component {
     constructor(props) {
@@ -25,13 +26,17 @@ class SignOn extends React.Component {
         }, data => {
             if (data.status === "ok") {
                 this.setState({message: "Success"});
-                //Cookie
+                setCookie({
+                    username: this.state.username,
+                    message: "HelloWorld"
+                })
                 //跳转
             } else {
                 this.setState({message: data.message});
                 this.refs.verify.handleClick();
             }
-        })
+        });
+        printCookie();
     }
 
     handleChange(newState) {
