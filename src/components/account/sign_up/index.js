@@ -1,5 +1,6 @@
 import React from "react";
 import {EditText} from "../../common/EditText";
+import {signUp, time} from "../../../utils/Service";
 
 class SignUp extends React.Component {
 
@@ -15,8 +16,13 @@ class SignUp extends React.Component {
     }
 
     handleSignUp() {
-        alert(this.state.username + "\n" + this.state.email + "\n" + this.state.password)
+        signUp({
+            username: this.state.username,
+            passwd: this.state.password,
+            email: this.state.email
+        }, data => console.log(data));
     }
+
 
     handleChange(newState) {
         let tempState = Object.assign({}, newState, this.state);
@@ -35,6 +41,7 @@ class SignUp extends React.Component {
                             }/>
                         </div>
                     </li>
+                    <br/>
                     <li>
                         <div>
                             <text>Email:</text>
@@ -43,6 +50,7 @@ class SignUp extends React.Component {
                             }/>
                         </div>
                     </li>
+                    <br/>
                     <li>
                         <div>
                             <text>Password:</text>
@@ -55,15 +63,18 @@ class SignUp extends React.Component {
                             />
                         </div>
                     </li>
+                    <br/>
                     <li>
                         <div>
                             <button onClick={this.handleSignUp}>SignUp</button>
                         </div>
                     </li>
                 </ul>
+                <text>{}</text>
             </div>
         );
     }
 }
 
 export default SignUp;
+
