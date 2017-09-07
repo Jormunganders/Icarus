@@ -1,6 +1,7 @@
 import React from "react";
 import {EditText} from "../../common/EditText";
-import {signUp, time} from "../../../utils/Service";
+import {signUp} from "../../../utils/Service";
+import "../../common/Header.css"
 
 class SignUp extends React.Component {
 
@@ -9,7 +10,8 @@ class SignUp extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            message: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSignUp = this.handleSignUp.bind(this);
@@ -20,7 +22,14 @@ class SignUp extends React.Component {
             username: this.state.username,
             passwd: this.state.password,
             email: this.state.email
-        }, data => console.log(data));
+        }, data => {
+            if (data.status === 'ok') {
+                this.setState({message: "Success"});
+                //进行跳转
+            } else {
+                this.setState({message: data.message})
+            }
+        });
     }
 
 
@@ -30,6 +39,7 @@ class SignUp extends React.Component {
     }
 
     render() {
+        const message = this.state.message;
         return (
             <div>
                 <ul>
@@ -70,7 +80,8 @@ class SignUp extends React.Component {
                         </div>
                     </li>
                 </ul>
-                <text>{}</text>
+                {message === 'Success' && <p>{message}</p>}
+                {message !== 'Success' && <p className="red">{message}</p>}
             </div>
         );
     }
