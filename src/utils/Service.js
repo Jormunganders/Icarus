@@ -1,5 +1,5 @@
 import axios from "axios";
-import {SIGN_UP, TEST} from "./Api";
+import {SIGN_ON, SIGN_UP, TEST, VERIFY} from "./Api";
 
 function get(url, data, action) {
     axios.get(url, {
@@ -8,7 +8,10 @@ function get(url, data, action) {
 }
 
 function post(url, data, action) {
-    axios.post(url, tarsform(data))
+    axios.post(url, tarsform(data),
+        {
+            withCredentials: true
+        })
         .then(action)
 }
 
@@ -31,6 +34,16 @@ function tarsform(object) {
  */
 export function signUp(data, action) {
     post(SIGN_UP, data, result => {
+        action(result.data)
+    })
+}
+
+export function getVerify() {
+    return VERIFY + "?time=" + new Date();
+}
+
+export function signOn(data, action) {
+    post(SIGN_ON, data, result => {
         action(result.data)
     })
 }
