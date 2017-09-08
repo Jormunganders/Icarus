@@ -1,5 +1,5 @@
 import axios from "axios";
-import {SIGN_ON, SIGN_UP, TEST, VERIFY} from "./Api";
+import {SIGN_ON, SIGN_OUT, SIGN_UP, TEST, VERIFY} from "./Api";
 
 function get(url, data, action) {
     axios.get(url, {
@@ -44,6 +44,12 @@ export function getVerify() {
 
 export function signOn(data, action) {
     post(SIGN_ON, data, result => {
+        action(result.data)
+    })
+}
+
+export function signOut(action) {
+    get(SIGN_OUT, {}, result => {
         action(result.data)
     })
 }
