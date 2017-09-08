@@ -2,7 +2,7 @@ import React from "react";
 import {EditText} from "../../common/EditText";
 import {VERIFY} from "../../../utils/Api";
 import {getVerify, signOn} from "../../../utils/Service";
-import {printCookie, setCookie} from "../../../utils/CookieUtils";
+import {delCookie, printCookie, setCookie} from "../../../utils/CookieUtils";
 
 class SignOn extends React.Component {
     constructor(props) {
@@ -24,11 +24,11 @@ class SignOn extends React.Component {
             passwd: this.state.passwd,
             verify: this.state.verify
         }, data => {
+            console.log(data);
             if (data.status === "ok") {
                 this.setState({message: "Success"});
                 setCookie({
-                    username: this.state.username,
-                    message: "HelloWorld"
+                    username: this.state.username
                 })
                 //跳转
             } else {
@@ -36,7 +36,7 @@ class SignOn extends React.Component {
                 this.refs.verify.handleClick();
             }
         });
-        printCookie();
+        delCookie("message")
     }
 
     handleChange(newState) {
