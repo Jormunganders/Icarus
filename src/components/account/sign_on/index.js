@@ -3,6 +3,7 @@ import {EditText} from "../../common/EditText";
 import {VERIFY} from "../../../utils/Api";
 import {getVerify, signOn} from "../../../utils/Service";
 import {delCookie, setCookie} from "../../../utils/CookieUtils";
+import SignOnVerify from "../SignOnVerify";
 
 class SignOn extends React.Component {
     constructor(props) {
@@ -48,6 +49,7 @@ class SignOn extends React.Component {
         const message = this.state.message;
         return (
             <div>
+                <SignOnVerify/>
                 <ul>
                     <li>
                         <div>
