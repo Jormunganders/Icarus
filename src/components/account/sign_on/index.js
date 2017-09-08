@@ -29,7 +29,7 @@ class SignOn extends React.Component {
                 this.setState({message: "Success"});
                 setCookie({
                     username: this.state.username,
-                    token: this.state.token
+                    token: data.data.token
                 })
                 //跳转
             } else {

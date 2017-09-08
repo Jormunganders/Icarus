@@ -49,7 +49,7 @@ export function signOn(data, action) {
 }
 
 export function signOut(action) {
-    get(SIGN_OUT, {}, result => {
+    post(SIGN_OUT, {}, result => {
         action(result.data)
     })
 }
