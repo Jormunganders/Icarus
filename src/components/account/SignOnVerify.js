@@ -1,20 +1,21 @@
 import React from "react";
 import {signOnVerify} from "../../utils/Service";
 import {getUserInfo} from "../../utils/UserUtils";
-import {HOME} from "../../utils/Mapx";
-import createBrowserHistory from "history/es/createBrowserHistory";
+import {SIGN_ON} from "../../utils/Mapx";
+import withRouter from "react-router-dom/es/withRouter";
 
 //登录验证
 class SignOnVerify extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
 
 
     componentWillMount() {
         signOnVerify(getUserInfo(), result => {
             if (result.status !== 'ok') {   //未登录
-                console.log("Not Sign!");
-                let history = createBrowserHistory();
-                history.push(HOME);
-                //跳转到登陆界面
+                this.props.history.push(SIGN_ON);
             }
         });
     }
@@ -25,4 +26,4 @@ class SignOnVerify extends React.Component {
 
 }
 
-export default SignOnVerify
+export default withRouter(SignOnVerify)
