@@ -7,7 +7,8 @@ import {
 import Home from "./components/Home";
 import SignUp from "./components/account/sign_up/index";
 import SignOn from "./components/account/sign_on/index";
-import {HOME, SIGN_ON, SIGN_UP} from "./utils/Mapx";
+import {HOME, LINK_LIST, SIGN_ON, SIGN_UP} from "./utils/Mapx";
+import LinkList from "./components/LinkList";
 
 const App = () => (
     <Router>
@@ -16,6 +17,7 @@ const App = () => (
             <Route exact path={HOME} component={Home}/>
             <Route path={SIGN_UP} component={SignUp}/>
             <Route path={SIGN_ON} component={SignOn}/>
+            <Route path={LINK_LIST} component={LinkList}/>
         </div>
     </Router>
 );

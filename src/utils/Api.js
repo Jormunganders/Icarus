@@ -7,3 +7,4 @@ export const SIGN_ON = ROOT + 'Home/Login/login';
 export const VERIFY = ROOT + 'Home/Login/showVerify';
 export const SIGN_OUT = ROOT + 'Home/Login/logout';
 export const SIGN_ON_VERIFY = ROOT + 'Home/Login/verification';
+export const LINK_LIST = ROOT + 'Home/Posts/getPostsList';  //帖子列表
