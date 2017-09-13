@@ -1,5 +1,5 @@
 import axios from "axios";
-import {LINK_LIST, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST, VERIFY} from "./Api";
+import {LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST, VERIFY} from "./Api";
 
 function get(url, data, action) {
     axios.get(url, {
@@ -69,6 +69,22 @@ export function signOnVerify(data, action) {
  */
 export function getLinkList(data, action) {
     get(LINK_LIST, data, result => {
+        action(result.data)
+    })
+}
+
+/**
+ * 发布帖子
+ * username 用户id
+ * cid 分类id
+ * title 标题
+ * content 内容
+ * keywords 关键词
+ * @param data
+ * @param action
+ */
+export function publishPost(data, action) {
+    post(PUBLISH_POSTS, data, result => {
         action(result.data)
     })
 }

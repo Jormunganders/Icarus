@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import SignUp from "./components/account/sign_up/index";
 import SignOn from "./components/account/sign_on/index";
 import {HOME, LINK_LIST, SIGN_ON, SIGN_UP} from "./utils/Mapx";
-import LinkList from "./components/LinkList";
+import LinkList from "./components/posts/list/LinkList";
 
 const App = () => (
     <Router>

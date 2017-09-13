@@ -1,7 +1,7 @@
 //帖子列表
 import React from "react";
 import {LinkItem} from "./LinkItem";
-import {getLinkList} from "../utils/Service";
+import {getLinkList} from "../../../utils/Service";
 
 class LinkList extends React.Component {
 
