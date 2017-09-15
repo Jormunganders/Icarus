@@ -15,6 +15,7 @@ class LinkList extends React.Component {
     //在这里加载数据
     componentWillMount() {
         getLinkList({page: 1, row: 10}, (result => {
+            console.log(result);
             if (result.data !== null) {
                 this.setState({links: result.data})
             }
@@ -26,7 +27,10 @@ class LinkList extends React.Component {
         const items = this.state.links.map(t =>
             <LinkItem content={t.title} key={t.posts_id}/>);
         return (
-            <ul>{items}</ul>
+            <div>
+                帖子列表：
+                <ul>{items}</ul>
+            </div>
         );
     }
 }

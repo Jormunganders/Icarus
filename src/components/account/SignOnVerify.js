@@ -15,6 +15,7 @@ class SignOnVerify extends React.Component {
     componentWillMount() {
         signOnVerify(getUserInfo(), result => {
             if (result.status !== 'ok') {   //未登录
+                console.log("Not Sign On");
                 this.props.history.push(SIGN_ON);
             }
         });
