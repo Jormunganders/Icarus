@@ -1,5 +1,5 @@
 import axios from "axios";
-import {LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST, VERIFY} from "./Api";
+import {ACCOUNT_INFO, LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST, VERIFY} from "./Api";
 
 function get(url, data, action) {
     axios.get(url, {
@@ -85,6 +85,12 @@ export function getLinkList(data, action) {
  */
 export function publishPost(data, action) {
     post(PUBLISH_POSTS, data, result => {
+        action(result.data)
+    })
+}
+
+export function getAccountInfo(username, action) {
+    get(ACCOUNT_INFO, {username: username}, result => {
         action(result.data)
     })
 }

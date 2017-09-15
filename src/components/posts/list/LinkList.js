@@ -15,8 +15,7 @@ class LinkList extends React.Component {
     //在这里加载数据
     componentWillMount() {
         getLinkList({page: 1, row: 10}, (result => {
-            console.log(result);
-            if (result.data !== null) {
+            if (result.data !== null && result.data !== undefined) {
                 this.setState({links: result.data})
             }
         }))

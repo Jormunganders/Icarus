@@ -3,6 +3,7 @@ import {EditText} from "../../common/EditText";
 import {VERIFY} from "../../../utils/Api";
 import {getVerify, signOn} from "../../../utils/Service";
 import {delCookie, setCookie} from "../../../utils/CookieUtils";
+import {ACCOUNT_INFO} from "../../../utils/Mapx";
 
 class SignOn extends React.Component {
     constructor(props) {
@@ -24,14 +25,13 @@ class SignOn extends React.Component {
             passwd: this.state.passwd,
             verify: this.state.verify
         }, data => {
-            console.log(data);
             if (data.status === "ok") {
                 this.setState({message: "Success"});
                 setCookie({
                     username: this.state.username,
                     token: data.data.token
-                })
-                //跳转
+                });
+                this.props.history.push(ACCOUNT_INFO);
             } else {
                 this.setState({message: data.message});
                 this.refs.verify.handleClick();

@@ -7,11 +7,6 @@ import withRouter from "react-router-dom/es/withRouter";
 //登录验证
 class SignOnVerify extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-
     componentWillMount() {
         signOnVerify(getUserInfo(), result => {
             if (result.status !== 'ok') {   //未登录

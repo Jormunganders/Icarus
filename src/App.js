@@ -7,9 +7,10 @@ import {
 import Home from "./components/Home";
 import SignUp from "./components/account/sign_up/index";
 import SignOn from "./components/account/sign_on/index";
-import {HOME, LINK_LIST, PUBLISH_POST, SIGN_ON, SIGN_UP} from "./utils/Mapx";
+import {ACCOUNT_INFO, HOME, LINK_LIST, PUBLISH_POST, SIGN_ON, SIGN_UP} from "./utils/Mapx";
 import LinkList from "./components/posts/list/LinkList";
 import PublishPosts from "./components/posts/publish/index";
+import {Account} from "./components/account/index";
 
 const App = () => (
     <Router>
@@ -20,6 +21,7 @@ const App = () => (
             <Route path={SIGN_ON} component={SignOn}/>
             <Route path={LINK_LIST} component={LinkList}/>
             <Route path={PUBLISH_POST} component={PublishPosts}/>
+            <Route path={ACCOUNT_INFO} component={Account}/>
         </div>
     </Router>
 );
