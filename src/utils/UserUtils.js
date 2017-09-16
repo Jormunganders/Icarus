@@ -43,9 +43,9 @@ export function updateCurrentUser(user) {
 export function clearCurrentUser() {
     for (let key in currentUser) {
         if (key === 'username' || key === 'uid') {
-            currentUser.key = '';
+            currentUser[key] = '';
         } else {
-            delete currentUser.key;
+            delete currentUser[key];
         }
     }
 }
@@ -57,12 +57,12 @@ export function subscribe(tag, action) {
 
 //取消观察
 export function unSubscribe(tag) {
-    delete subscribers.tag
+    delete subscribers[tag]
 }
 
 function publish(data) {
     for (let key in subscribers) {
-        if (subscribers.key !== null && subscribers.key !== undefined) {
+        if (subscribers[key] !== null && subscribers[key] !== undefined) {
             subscribers.key(data)
         }
     }
