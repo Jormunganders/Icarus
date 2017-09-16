@@ -15,7 +15,6 @@ const Header = () => (
             <li><Link to={LINK_LIST}>Post List</Link></li>
             <li><Link to={PUBLISH_POST}>Publish Post</Link></li>
             <li><Link to={ACCOUNT_INFO}>Account Info</Link></li>
-            <li><SignOut/></li>
         </ul>
         <hr/>
     </div>

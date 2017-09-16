@@ -17,13 +17,14 @@ class SignOut extends React.Component {
             clearCurrentUser();
             delCookie("username");
             delCookie("token");
+            this.props.onSignOut();
         })
     }
 
     render() {
         return (
             <div>
-                <button onClick={this.handleClick}>Sign out</button>
+                <div onClick={this.handleClick}>退出登录</div>
                 &nbsp;{this.state.message}
             </div>
         );
