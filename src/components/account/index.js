@@ -11,7 +11,7 @@ export class Account extends React.Component {
 
     componentWillMount() {
         //获取用户信息
-        getAccountInfo('qiaoyunrui', result => console.log(result))
+        getAccountInfo('qiaoyunrui', result => console.log(result.data))
     }
 
     render() {
@@ -22,3 +22,9 @@ export class Account extends React.Component {
             </div>);
     }
 }
+
+/**
+ * 这个界面要展示的信息有：【Step by Step】
+ * pickname
+ * 我的帖子
+ */

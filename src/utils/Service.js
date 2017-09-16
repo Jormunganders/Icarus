@@ -3,7 +3,8 @@ import {ACCOUNT_INFO, LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OU
 
 function get(url, data, action) {
     axios.get(url, {
-        params: data
+        params: data,
+        withCredentials: true
     }).then(action)
 }
 
