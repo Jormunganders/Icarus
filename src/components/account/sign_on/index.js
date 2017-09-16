@@ -4,6 +4,7 @@ import {VERIFY} from "../../../utils/Api";
 import {getVerify, signOn} from "../../../utils/Service";
 import {delCookie, setCookie} from "../../../utils/CookieUtils";
 import {ACCOUNT_INFO} from "../../../utils/Mapx";
+import {updateCurrentUser} from "../../../utils/UserUtils";
 
 class SignOn extends React.Component {
     constructor(props) {
@@ -28,6 +29,10 @@ class SignOn extends React.Component {
             if (data.status === "ok") {
                 this.setState({message: "Success"});
                 setCookie({
+                    username: this.state.username,
+                    token: data.data.token
+                });
+                updateCurrentUser({
                     username: this.state.username,
                     token: data.data.token
                 });

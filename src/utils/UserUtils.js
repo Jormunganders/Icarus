@@ -19,13 +19,24 @@ const currentUser = {
     uid: ''
 };
 
-const subscribers = {};    //观察者
+let signOnState;
+
+const subscribers = new Map();    //观察者
 
 /**
  * 获取当前登录用户
  * @returns {{username: string, uid: string}}
  */
 export function getCurrentUser() {
+    if (currentUser === null || currentUser === undefined ||
+        currentUser.username === null ||
+        currentUser.username === undefined ||
+        currentUser.username === '') {
+        updateCurrentUser({
+            username: getCookie("username"),
+            token: getCookie("token")
+        });
+    }
     return currentUser;
 }
 
@@ -34,7 +45,12 @@ export function getCurrentUser() {
  * @param user
  */
 export function updateCurrentUser(user) {
-    Object.assign(currentUser, user)
+    Object.assign(currentUser, user);
+    if (currentUser.username !== '' && currentUser.username !== undefined) {
+        setSignOnState(true)
+    } else {
+        setSignOnState(false)
+    }
 }
 
 /**
@@ -48,16 +64,19 @@ export function clearCurrentUser() {
             delete currentUser[key];
         }
     }
+    setSignOnState(false)
 }
 
 //进行观察
 export function subscribe(tag, action) {
-    subscribers.tag = action
+    subscribers.set(tag, action)
 }
 
 //取消观察
 export function unSubscribe(tag) {
-    delete subscribers[tag]
+    if (subscribers.has(tag)) {
+        subscribers.delete(tag)
+    }
 }
 
 function publish(data) {
@@ -65,5 +84,20 @@ function publish(data) {
         if (subscribers[key] !== null && subscribers[key] !== undefined) {
             subscribers.key(data)
         }
+    }
+}
+
+export function getSignOnState() {
+    return signOnState;
+}
+
+function setSignOnState(newState) {
+    let oldState = getSignOnState();
+    signOnState = newState;
+    if (oldState !== newState) {
+        publish({
+            oldState: oldState,
+            nweState: newState
+        })
     }
 }

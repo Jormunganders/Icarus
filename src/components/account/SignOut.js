@@ -1,5 +1,7 @@
 import React from "react";
 import {signOut} from "../../utils/Service";
+import {delCookie} from "../../utils/CookieUtils";
+import {clearCurrentUser} from "../../utils/UserUtils";
 
 class SignOut extends React.Component {
 
@@ -11,7 +13,10 @@ class SignOut extends React.Component {
 
     handleClick() {
         signOut(data => {
-            this.setState({message: data.message})
+            this.setState({message: data.message});
+            clearCurrentUser();
+            delCookie("username");
+            delCookie("token");
         })
     }
 
