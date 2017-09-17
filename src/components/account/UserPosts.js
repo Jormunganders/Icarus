@@ -9,18 +9,21 @@ import React from "react";
 export class UserPosts extends ListView {
 
     getListData(params) {
-        console.log(params);
         getUserPosts({
             username: getCurrentUser().username,
             page: params.page,
             row: params.row
         }, result => {
-            console.log(result)
+            if (result.status === 'ok') {
+                this.setState({
+                    data: result.data
+                })
+            }
         })
     }
 
     createItemView(position, data) {
-        return (<h3>{position}</h3>)
+        return (<li key={data.posts_id}><h3>{data.title}</h3></li>)
     }
 
 }

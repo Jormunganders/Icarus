@@ -38,9 +38,8 @@ export class ListView extends React.Component {
     }
 
     render() {
-        const items = this.state.data.map((t, position) => {
-                this.createItemView(position, t);
-            }
+        const items = this.state.data.map((t, position) =>
+            this.createItemView(position, t)
         );
         return (
             <div>
