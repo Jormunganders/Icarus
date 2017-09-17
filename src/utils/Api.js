@@ -10,3 +10,4 @@ export const SIGN_ON_VERIFY = ROOT + 'Home/Login/verification';
 export const LINK_LIST = ROOT + 'Home/Posts/getPostsList';  //帖子列表
 export const PUBLISH_POSTS = ROOT + 'Home/Classification/publishPosts'; //发布帖子
 export const ACCOUNT_INFO = ROOT + 'Home/User/getOneUser';  //用户信息
+export const ACCOUNT_EDIT = ROOT + 'Home/User/editUserData';    //用户信息修改

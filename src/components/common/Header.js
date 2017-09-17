@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom'
 import {ACCOUNT_INFO, HOME, LINK_LIST, PUBLISH_POST, SIGN_ON, SIGN_UP} from "../../utils/Mapx";
 import './Header.css';
-import SignOut from "../account/SignOut";
 
 const Header = () => (
     <div>

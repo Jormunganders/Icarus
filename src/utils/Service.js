@@ -1,5 +1,8 @@
 import axios from "axios";
-import {ACCOUNT_INFO, LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST, VERIFY} from "./Api";
+import {
+    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST,
+    VERIFY
+} from "./Api";
 
 function get(url, data, action) {
     axios.get(url, {
@@ -90,8 +93,22 @@ export function publishPost(data, action) {
     })
 }
 
+/**
+ * 获取用户信息
+ * @param username
+ * @param action
+ */
 export function getAccountInfo(username, action) {
     get(ACCOUNT_INFO, {username: username}, result => {
+        action(result.data)
+    })
+}
+
+/**
+ * 用户资料修改
+ */
+export function editAccountInfo(data, action) {
+    post(ACCOUNT_EDIT, data, result => {
         action(result.data)
     })
 }

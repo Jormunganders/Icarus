@@ -4,6 +4,8 @@ import SignOnVerify from "./SignOnVerify";
 import {getAccountInfo} from "../../utils/Service";
 import {getCurrentUser, updateCurrentUser} from "../../utils/UserUtils";
 import SignOut from "./SignOut";
+import {ACCOUNT_EDIT} from "../../utils/Mapx";
+import Link from "react-router-dom/es/Link";
 
 export class Account extends React.Component {
 
@@ -20,7 +22,7 @@ export class Account extends React.Component {
         getAccountInfo(this.state.currentUser.username, result => {
             if (result.status === 'ok') {   //获取信息成功
                 updateCurrentUser(result.data);
-                console.log(getCurrentUser())
+                this.setState({currentUser: getCurrentUser()})
             } else {
                 this.setState({message: "获取用户信息失败"});
             }
@@ -33,10 +35,11 @@ export class Account extends React.Component {
             <div>
                 <SignOnVerify/>
                 <h1>{user.user_nick}</h1>
-                <h2>{user.username}</h2>
+                用户名：<h2>{user.username}</h2>
+                邮箱： <h2>{user.email}</h2>
                 <h4 className="red">{this.state.message}</h4>
                 <ul>
-                    <li>修改信息</li>
+                    <li><Link to={ACCOUNT_EDIT}>修改信息</Link></li>
                     <li>我的帖子</li>
                     <li><SignOut onSignOut={
                         () => {
