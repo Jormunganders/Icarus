@@ -23,14 +23,30 @@ export class SelectList extends React.Component {
         })
     }
 
+    /**
+     * 初始选中的 cid
+     */
+    getInitCid() {
+        if (this.state.items.length > 0) {
+            return this.state.items[0].cid;
+        }
+        return -1;
+    }
+
+
     handleSelect(position) {
         this.props.onChange(this.state.items[position].cid)
     }
 
     render() {
-        const items = this.state.items.map(t =>
-            <option key={t.cid} name={t.cid}>{t.c_name}</option>
-        );
+        const items = this.state.items.map((t, position) => {
+            if (position === 0) {
+                return (<option key={t.cid} name={t.cid} selected="selected">{t.c_name}</option>)
+            } else {
+                return (<option key={t.cid} name={t.cid}>{t.c_name}</option>)
+            }
+
+        });
 
         return (
             <div>

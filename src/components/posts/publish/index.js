@@ -5,6 +5,8 @@ import {TextArea} from "../../common/TextArea";
 import SignOnVerify from "../../account/SignOnVerify";
 import {publishPost} from "../../../utils/Service";
 import {SelectList} from "./SelectList";
+import {getCurrentUser} from "../../../utils/UserUtils";
+import {HOME} from "../../../utils/Mapx";
 
 class PublishPosts extends React.Component {
     constructor(props) {
@@ -14,18 +16,29 @@ class PublishPosts extends React.Component {
             keywords: '',
             content: ''
         };
-        this.handleChange = this.handleChange.bind(this);
+        this.data = {
+            classificationId: ''
+        };
         this.handlePublish = this.handlePublish.bind(this);
     }
 
     handlePublish() {
-        publishPost({}, result => {
-            console.log(result)
+        if (this.data.classificationId === '' || this.data.classificationId === undefined) {
+            this.data.classificationId = this.refs.selection.getInitCid();
+        }
+        publishPost({
+            username: getCurrentUser().username,
+            cid: this.data.classificationId,
+            title: this.state.title,
+            content: this.state.content,
+            keywords: this.state.keywords
+        }, result => {
+            if (result.status === 'ok') {
+                this.props.history.push(HOME);
+            } else {
+                alert(result.message);
+            }
         })
-    }
-
-    handleChange(newState) {
-        this.setState(newState)
     }
 
     render() {
@@ -51,9 +64,9 @@ class PublishPosts extends React.Component {
                                   value => this.setState({content: value})
                               }/>
                 </li>
-                选择板块: <SelectList onChange={id => console.log(id)}/>
+                选择板块: <SelectList ref="selection" onChange={id => this.setState({classificationId: id})}/>
                 <br/>
-                <button onClick={this.handlePublish}>Publish</button>
+                <button onClick={this.handlePublish}>发布</button>
             </ul>
         </div>);
     }
