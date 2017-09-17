@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
-    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP, TEST,
+    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PASSWORD_EDIT, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
+    TEST,
     VERIFY
 } from "./Api";
 
@@ -111,4 +112,13 @@ export function editAccountInfo(data, action) {
     post(ACCOUNT_EDIT, data, result => {
         action(result.data)
     })
+}
+
+/**
+ * 修改密码
+ * @param data
+ * @param action
+ */
+export function editPassword(data, action) {
+    post(PASSWORD_EDIT, data, result => action(result.data))
 }

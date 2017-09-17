@@ -4,7 +4,7 @@ import SignOnVerify from "./SignOnVerify";
 import {getAccountInfo} from "../../utils/Service";
 import {getCurrentUser, updateCurrentUser} from "../../utils/UserUtils";
 import SignOut from "./SignOut";
-import {ACCOUNT_EDIT} from "../../utils/Mapx";
+import {ACCOUNT_EDIT, PASSWORD_EDIT} from "../../utils/Mapx";
 import Link from "react-router-dom/es/Link";
 
 export class Account extends React.Component {
@@ -40,6 +40,7 @@ export class Account extends React.Component {
                 <h4 className="red">{this.state.message}</h4>
                 <ul>
                     <li><Link to={ACCOUNT_EDIT}>修改信息</Link></li>
+                    <li><Link to={PASSWORD_EDIT}>修改密码</Link></li>
                     <li>我的帖子</li>
                     <li><SignOut onSignOut={
                         () => {
@@ -52,9 +53,3 @@ export class Account extends React.Component {
             </div>);
     }
 }
-
-/**
- * 这个界面要展示的信息有：【Step by Step】
- * pickname
- * 我的帖子
- */
