@@ -1,7 +1,8 @@
 import axios from "axios";
 import {
-    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PASSWORD_EDIT, PUBLISH_POSTS, SIGN_ON, SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
-    TEST,
+    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PARENT_CLASSIFICATION_LIST, PASSWORD_EDIT, PUBLISH_POSTS, SIGN_ON,
+    SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
+    TEST, USER_POSTS,
     VERIFY
 } from "./Api";
 
@@ -121,4 +122,17 @@ export function editAccountInfo(data, action) {
  */
 export function editPassword(data, action) {
     post(PASSWORD_EDIT, data, result => action(result.data))
+}
+
+/**
+ * 获取用户已发布的帖子
+ * @param data
+ * @param action
+ */
+export function getUserPosts(data, action) {
+    get(USER_POSTS, data, result => action(result.data))
+}
+
+export function getParentClassificationList(action) {
+    get(PARENT_CLASSIFICATION_LIST, {}, result => action(result.data))
 }

@@ -4,7 +4,7 @@ import SignOnVerify from "./SignOnVerify";
 import {getAccountInfo} from "../../utils/Service";
 import {getCurrentUser, updateCurrentUser} from "../../utils/UserUtils";
 import SignOut from "./SignOut";
-import {ACCOUNT_EDIT, PASSWORD_EDIT} from "../../utils/Mapx";
+import {ACCOUNT_EDIT, PASSWORD_EDIT, USER_POSTS} from "../../utils/Mapx";
 import Link from "react-router-dom/es/Link";
 
 export class Account extends React.Component {
@@ -41,7 +41,7 @@ export class Account extends React.Component {
                 <ul>
                     <li><Link to={ACCOUNT_EDIT}>修改信息</Link></li>
                     <li><Link to={PASSWORD_EDIT}>修改密码</Link></li>
-                    <li>我的帖子</li>
+                    <li><Link to={USER_POSTS}>我的帖子</Link></li>
                     <li><SignOut onSignOut={
                         () => {
                             this.setState({

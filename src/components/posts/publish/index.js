@@ -4,6 +4,7 @@ import {EditText} from "../../common/EditText";
 import {TextArea} from "../../common/TextArea";
 import SignOnVerify from "../../account/SignOnVerify";
 import {publishPost} from "../../../utils/Service";
+import {SelectList} from "./SelectList";
 
 class PublishPosts extends React.Component {
     constructor(props) {
@@ -44,12 +45,14 @@ class PublishPosts extends React.Component {
                                   value => this.setState({keywords: value})
                               }/>
                 </li>
-                <li>
+                <li>内容：
                     <TextArea content={this.state.content}
                               onChange={
                                   value => this.setState({content: value})
                               }/>
                 </li>
+                选择板块: <SelectList onChange={id => console.log(id)}/>
+                <br/>
                 <button onClick={this.handlePublish}>Publish</button>
             </ul>
         </div>);

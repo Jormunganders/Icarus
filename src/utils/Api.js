@@ -12,3 +12,5 @@ export const PUBLISH_POSTS = ROOT + 'Home/Classification/publishPosts'; //发布
 export const ACCOUNT_INFO = ROOT + 'Home/User/getOneUser';  //用户信息
 export const ACCOUNT_EDIT = ROOT + 'Home/User/editUserData';    //用户信息修改
 export const PASSWORD_EDIT = ROOT + 'Home/User/editPasswd';  //密码修改
+export const USER_POSTS = ROOT + 'Home/User/getUserPosts';  //获取用户已发布的帖子
+export const PARENT_CLASSIFICATION_LIST = ROOT + 'Home/Classification/getParentClassificationList';    //获取所有主板块的信息
