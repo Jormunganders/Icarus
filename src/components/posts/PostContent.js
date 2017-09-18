@@ -1,6 +1,7 @@
 //帖子内容
 
-import * as React from "react";
+import React from "react";
+import {getPostContent} from "../../utils/Service";
 
 class PostContent extends React.Component {
 
@@ -14,15 +15,35 @@ class PostContent extends React.Component {
 
     componentWillMount() {
         //在这里加载数据
-        console.log(this.id)
+        getPostContent(this.id, result => {
+            if (result.status === 'ok') {
+                this.setState({
+                    data: result.data
+                })
+            }
+        })
     }
 
     render() {
-        return (
-            <div>
-                <p2>帖子详情</p2>
-            </div>
-        );
+        console.log(this.state.data);
+        if (this.state.data === null || this.state.data === undefined) {
+            return (<div>
+                未知错误
+            </div>);
+        }
+        else {
+            console.log("###");
+            return (
+                <div>
+                    帖子内容
+                    <h1>{this.state.data.title}</h1>
+                    <h2>作者：{this.state.data.author}</h2>
+                    <h4>关键字：{this.state.data.keywords}</h4>
+                    <br/>
+                    {this.state.data.content}
+                </div>
+            );
+        }
     }
 
 }
