@@ -16,3 +16,4 @@ export const USER_POSTS = ROOT + 'Home/User/getUserPosts';  //获取用户已发
 export const PARENT_CLASSIFICATION_LIST = ROOT + 'Home/Classification/getParentClassificationList';    //获取所有主板块的信息
 export const POST_CONTENT = ROOT + "Home/Posts/getOnePosts";  //帖子详情
 export const REPLY_LIST = ROOT + "Home/Reply/getAllReply";  //获取某个帖子下的所有评论
+export const ADD_REPLY = ROOT + "Home/Reply/addReply";  //发表评论

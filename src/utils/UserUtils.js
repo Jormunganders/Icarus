@@ -88,6 +88,15 @@ function publish(data) {
 }
 
 export function getSignOnState() {
+    if (currentUser === null || currentUser === undefined ||
+        currentUser.username === null ||
+        currentUser.username === undefined ||
+        currentUser.username === '') {
+        updateCurrentUser({
+            username: getCookie("username"),
+            token: getCookie("token")
+        });
+    }
     return signOnState;
 }
 

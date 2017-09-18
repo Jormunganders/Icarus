@@ -3,6 +3,7 @@
 import React from "react";
 import {getPostContent} from "../../utils/Service";
 import ReplyList from "../replys/ReplyList";
+import PublishReply from "../replys/PublishReply";
 
 class PostContent extends React.Component {
 
@@ -41,12 +42,14 @@ class PostContent extends React.Component {
                     <br/>
                     {this.state.data.content}
                     <br/>
-                    <ReplyList postsId={this.id}/>
+                    <PublishReply postsId={this.id}/>
                 </div>
             );
         }
     }
 
 }
+
+//<ReplyList postsId={this.id}/>
 
 export default PostContent
