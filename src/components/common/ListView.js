@@ -8,7 +8,7 @@ export class ListView extends React.Component {
         this.state = {
             data: [],
             page: 1,
-            row: 30
+            row: 100
         };
         this.getListData = this.getListData.bind(this);
         this.createItemView = this.createItemView.bind(this);

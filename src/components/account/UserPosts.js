@@ -16,7 +16,6 @@ export class UserPosts extends ListView {
             row: params.row
         }, result => {
             if (result.status === 'ok') {
-                console.log(result.data);
                 this.setState({
                     data: result.data
                 })
@@ -25,7 +24,6 @@ export class UserPosts extends ListView {
     }
 
     createItemView(position, data) {
-        // return (<li key={data.posts_id}><h3>{data.title}</h3></li>)
         return (<PostItemView data={data}/>)
     }
 

@@ -9,11 +9,10 @@ const Header = () => (
     <div>
         <h2 className="header-title"><Link to={HOME}>Icarus</Link></h2>
         <ul>
-            <li><Link to={SIGN_UP}>Sign up</Link></li>
-            <li><Link to={SIGN_ON}>Sign on</Link></li>
-            <li><Link to={LINK_LIST}>Post List</Link></li>
-            <li><Link to={PUBLISH_POST}>Publish Post</Link></li>
-            <li><Link to={ACCOUNT_INFO}>Account Info</Link></li>
+            <li><Link to={SIGN_UP}>注册</Link></li>
+            <li><Link to={SIGN_ON}>登录</Link></li>
+            <li><Link to={ACCOUNT_INFO}>个人中心</Link></li>
+            <li><Link to={PUBLISH_POST}>发帖</Link></li>
         </ul>
         <hr/>
     </div>

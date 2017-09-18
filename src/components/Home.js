@@ -1,13 +1,24 @@
 import React from "react";
 import SignOnVerify from "./account/SignOnVerify";
+import {ListView} from "./common/ListView";
+import {getLinkList} from "../utils/Service";
+import PostItemView from "./posts/PostItemView";
 
-const Home = () => (
-    <div>
-        <SignOnVerify/>
-        <h2>Hello World</h2>
-        <img src="http://wx2.sinaimg.cn/mw690/4deda15fly1fiyk63wo3rj21qc2iv1l1.jpg"
-             alt="谭松韵"/>
-    </div>
-);
+class Home extends ListView {
+
+
+    getListData(params) {
+        getLinkList({page: this.state.page, row: this.state.row},
+            (result => {
+                if (result.data !== null && result.data !== undefined) {
+                    this.setState({data: result.data})
+                }
+            }))
+    }
+
+    createItemView(position, data) {
+        return (<PostItemView data={data}/>)
+    }
+}
 
 export default Home
