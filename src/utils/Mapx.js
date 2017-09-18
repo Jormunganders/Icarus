@@ -7,3 +7,4 @@ export const ACCOUNT_INFO = '/account/info';
 export const ACCOUNT_EDIT = '/account/edit';
 export const PASSWORD_EDIT = '/account/password_edit';
 export const USER_POSTS = '/account/user_posts';
+export const POST_CONTENT = '/post/content';

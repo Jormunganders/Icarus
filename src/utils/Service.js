@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
-    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PARENT_CLASSIFICATION_LIST, PASSWORD_EDIT, PUBLISH_POSTS, SIGN_ON,
+    ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PARENT_CLASSIFICATION_LIST, PASSWORD_EDIT, POST_CONTENT, PUBLISH_POSTS,
+    SIGN_ON,
     SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
     TEST, USER_POSTS,
     VERIFY
@@ -133,6 +134,17 @@ export function getUserPosts(data, action) {
     get(USER_POSTS, data, result => action(result.data))
 }
 
+/**
+ * 获取分类列表
+ * @param action
+ */
 export function getParentClassificationList(action) {
     get(PARENT_CLASSIFICATION_LIST, {}, result => action(result.data))
+}
+
+/**
+ * 获取帖子内容
+ */
+export function getPostContent(id, action) {
+    get(POST_CONTENT, {postsId: id}, result => action(result.data))
 }

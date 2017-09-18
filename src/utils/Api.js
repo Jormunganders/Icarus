@@ -14,3 +14,4 @@ export const ACCOUNT_EDIT = ROOT + 'Home/User/editUserData';    //用户信息�
 export const PASSWORD_EDIT = ROOT + 'Home/User/editPasswd';  //密码修改
 export const USER_POSTS = ROOT + 'Home/User/getUserPosts';  //获取用户已发布的帖子
 export const PARENT_CLASSIFICATION_LIST = ROOT + 'Home/Classification/getParentClassificationList';    //获取所有主板块的信息
+export const POST_CONTENT = ROOT + "Admin/Posts/getOnePosts";  //帖子详情
