@@ -2,6 +2,7 @@
 
 import React from "react";
 import {getPostContent} from "../../utils/Service";
+import ReplyList from "../replys/ReplyList";
 
 class PostContent extends React.Component {
 
@@ -39,6 +40,8 @@ class PostContent extends React.Component {
                     <h4>关键字：{this.state.data.keywords}</h4>
                     <br/>
                     {this.state.data.content}
+                    <br/>
+                    <ReplyList postsId={this.id}/>
                 </div>
             );
         }

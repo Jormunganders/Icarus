@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
     ACCOUNT_EDIT, ACCOUNT_INFO, LINK_LIST, PARENT_CLASSIFICATION_LIST, PASSWORD_EDIT, POST_CONTENT, PUBLISH_POSTS,
+    REPLY_LIST,
     SIGN_ON,
     SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
     TEST, USER_POSTS,
@@ -147,4 +148,13 @@ export function getParentClassificationList(action) {
  */
 export function getPostContent(id, action) {
     get(POST_CONTENT, {postsId: id}, result => action(result.data))
+}
+
+/**
+ * 获取帖子的全部评论
+ * @param data
+ * @param action
+ */
+export function getAllReply(data, action) {
+    get(REPLY_LIST,data,result => action(result.data))
 }
