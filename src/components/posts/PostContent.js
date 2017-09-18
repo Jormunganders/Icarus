@@ -32,10 +32,8 @@ class PostContent extends React.Component {
             </div>);
         }
         else {
-            console.log("###");
             return (
                 <div>
-                    帖子内容
                     <h1>{this.state.data.title}</h1>
                     <h2>作者：{this.state.data.author}</h2>
                     <h4>关键字：{this.state.data.keywords}</h4>
