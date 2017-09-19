@@ -21,3 +21,5 @@ export const CLASS_INFO = ROOT + "Home/Classification/getOneClassification";    
 export const CLASS_POSTS = ROOT + "Home/Posts/getClassificationPosts";  //获取某个分类下的帖子列表
 export const CLASS_TREE = ROOT + "Home/Classification/getTreeClassification";   //获取某个分类的树形结构，即子版块
 export const SEARCH = ROOT + "Home/Posts/searchPostsByKeywords";    //搜索帖子
+export const TOP_POSTS = ROOT + "Home/Posts/getTopPostsList";   //置顶帖子
+export const RECOMMEND_POSTS = ROOT + "Home/Posts/getRecommendPostsList"; //推荐帖子

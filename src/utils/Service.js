@@ -3,11 +3,11 @@ import {
     ACCOUNT_EDIT, ACCOUNT_INFO, ADD_REPLY, CLASS_INFO, CLASS_POSTS, CLASS_TREE, LINK_LIST, PARENT_CLASSIFICATION_LIST,
     PASSWORD_EDIT,
     POST_CONTENT,
-    PUBLISH_POSTS,
+    PUBLISH_POSTS, RECOMMEND, RECOMMEND_POSTS,
     REPLY_LIST, SEARCH,
     SIGN_ON,
     SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
-    TEST, USER_POSTS,
+    TEST, TOP_POSTS, USER_POSTS,
     VERIFY
 } from "./Api";
 
@@ -201,6 +201,27 @@ export function getClassTree(id, action) {
     get(CLASS_TREE, {cid: id}, result => action(result.data))
 }
 
+/**
+ * 搜索
+ * @param data
+ * @param action
+ */
 export function search(data, action) {
     post(SEARCH, data, result => action(result.data))
+}
+
+/**
+ * 获取置顶帖子
+ */
+export function getTopPosts(data, action) {
+    get(TOP_POSTS, data, result => action(result.data))
+}
+
+/**
+ * 获取推荐帖子
+ * @param data
+ * @param action
+ */
+export function getRecommendPosts(data, action) {
+    get(RECOMMEND_POSTS, data, result => action(result.data))
 }
