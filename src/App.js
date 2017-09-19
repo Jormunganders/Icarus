@@ -8,7 +8,8 @@ import Home from "./components/Home";
 import SignUp from "./components/account/sign_up/index";
 import SignOn from "./components/account/sign_on/index";
 import {
-    ACCOUNT_EDIT, ACCOUNT_INFO, HOME, LINK_LIST, PASSWORD_EDIT, POST_CONTENT, PUBLISH_POST, SIGN_ON, SIGN_UP,
+    ACCOUNT_EDIT, ACCOUNT_INFO, CLASS_LIST, HOME, LINK_LIST, PASSWORD_EDIT, POST_CONTENT, PUBLISH_POST, SIGN_ON,
+    SIGN_UP,
     USER_POSTS
 } from "./utils/Mapx";
 import LinkList from "./components/posts/list/LinkList";
@@ -17,6 +18,7 @@ import {Account} from "./components/account/index";
 import {AccountEdit, PasswordEdit} from "./components/account/edit";
 import {UserPosts} from "./components/account/UserPosts";
 import PostContent from "./components/posts/PostContent";
+import ClassList from "./components/classification/list";
 
 const App = () => (
     <Router>
@@ -32,6 +34,7 @@ const App = () => (
             <Route path={PASSWORD_EDIT} component={PasswordEdit}/>
             <Route path={USER_POSTS} component={UserPosts}/>
             <Route path={POST_CONTENT} component={PostContent}/>
+            <Route path={CLASS_LIST} component={ClassList}/>
         </div>
     </Router>
 );

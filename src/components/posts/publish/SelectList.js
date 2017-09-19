@@ -16,7 +16,6 @@ export class SelectList extends React.Component {
 
     componentWillMount() {
         getParentClassificationList(result => {
-            console.log(result.data);
             if (result.status === 'ok') {
                 this.setState({items: result.data})
             }
