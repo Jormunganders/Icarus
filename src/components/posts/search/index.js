@@ -18,8 +18,9 @@ class Search extends ListView {
         search({
             page: this.state.page,
             row: this.state.row,
-            keywords: this.keywords
+            keywords: this.state.keywords
         }, result => {
+            console.log(result);
             if (result.status === 'ok') {
                 this.setState({
                     data: result.data
