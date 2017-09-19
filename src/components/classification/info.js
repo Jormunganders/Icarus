@@ -58,10 +58,13 @@ class ClassInfo extends ListView {
             <div>
                 {message}
                 ---子板块---
-                <ClassList id={this.id} onChange={newId => {
-                    this.id = newId;
-                    this.getListData(this.state)
-                }}/>
+                <ClassList ref="child"
+                           id={this.id}
+                           onChange={newId => {
+                               this.id = newId;
+                               this.getListData(this.state);
+                               this.refs.child.update(this.id);
+                           }}/>
                 <br/>
                 ---帖子---
                 {super.render()}
@@ -71,3 +74,5 @@ class ClassInfo extends ListView {
 }
 
 export default ClassInfo
+
+//子版块的 Id 不更新...

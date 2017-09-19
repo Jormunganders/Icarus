@@ -6,7 +6,6 @@ import PostItemView from "./posts/PostItemView";
 
 class Home extends ListView {
 
-
     getListData(params) {
         getLinkList({page: this.state.page, row: this.state.row},
             (result => {

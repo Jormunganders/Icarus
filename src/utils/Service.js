@@ -4,7 +4,7 @@ import {
     PASSWORD_EDIT,
     POST_CONTENT,
     PUBLISH_POSTS,
-    REPLY_LIST,
+    REPLY_LIST, SEARCH,
     SIGN_ON,
     SIGN_ON_VERIFY, SIGN_OUT, SIGN_UP,
     TEST, USER_POSTS,
@@ -199,4 +199,8 @@ export function getClassPosts(data, action) {
  */
 export function getClassTree(id, action) {
     get(CLASS_TREE, {cid: id}, result => action(result.data))
+}
+
+export function search(data, action) {
+    post(SEARCH, data, result => action(result.data))
 }

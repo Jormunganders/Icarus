@@ -9,6 +9,7 @@ import SignUp from "./components/account/sign_up/index";
 import SignOn from "./components/account/sign_on/index";
 import {
     ACCOUNT_EDIT, ACCOUNT_INFO, CLASS_INFO, CLASS_LIST, HOME, LINK_LIST, PASSWORD_EDIT, POST_CONTENT, PUBLISH_POST,
+    SEARCH,
     SIGN_ON,
     SIGN_UP,
     USER_POSTS
@@ -21,6 +22,7 @@ import {UserPosts} from "./components/account/UserPosts";
 import PostContent from "./components/posts/PostContent";
 import ClassList from "./components/classification/list";
 import ClassInfo from "./components/classification/info";
+import Search from "./components/posts/search/index";
 
 const App = () => (
     <Router>
@@ -38,6 +40,7 @@ const App = () => (
             <Route path={POST_CONTENT} component={PostContent}/>
             <Route path={CLASS_LIST} component={ClassList}/>
             <Route path={CLASS_INFO} component={ClassInfo}/>
+            <Route path={SEARCH} component={Search}/>
         </div>
     </Router>
 );

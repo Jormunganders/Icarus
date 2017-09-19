@@ -7,11 +7,7 @@ import ClassItem from "./item";
 class ClassList extends ListView {
     getListData(params) {
         if (this.props.id !== undefined) {
-            getClassTree(this.props.id, result => {
-                if (result.status === 'ok') {
-                    this.setState({data: result.data})
-                }
-            });
+            this.update(this.props.id)
         } else {
             getParentClassificationList(result => {
                 if (result.status === 'ok') {
@@ -28,6 +24,16 @@ class ClassList extends ListView {
                 this.getListData(this.state)
             }
         }}/>
+    }
+
+    update(id) {
+        getClassTree(id, result => {
+            if (result.status === 'ok') {
+                this.setState({data: result.data})
+            } else {
+                this.setState({data: []})
+            }
+        });
     }
 
     render() {

@@ -20,3 +20,4 @@ export const ADD_REPLY = ROOT + "Home/Reply/addReply";  //发表评论
 export const CLASS_INFO = ROOT + "Home/Classification/getOneClassification";    //获取某个分类的的信息
 export const CLASS_POSTS = ROOT + "Home/Posts/getClassificationPosts";  //获取某个分类下的帖子列表
 export const CLASS_TREE = ROOT + "Home/Classification/getTreeClassification";   //获取某个分类的树形结构，即子版块
+export const SEARCH = ROOT + "Home/Posts/searchPostsByKeywords";    //搜索帖子
