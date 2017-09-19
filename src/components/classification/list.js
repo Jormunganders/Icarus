@@ -15,7 +15,6 @@ class ClassList extends ListView {
     }
 
     createItemView(position, data) {
-        console.log(data);
         return <ClassItem key={data.cid} data={data}/>
     }
 

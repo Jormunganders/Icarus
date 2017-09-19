@@ -1,6 +1,8 @@
 import axios from "axios";
 import {
-    ACCOUNT_EDIT, ACCOUNT_INFO, ADD_REPLY, LINK_LIST, PARENT_CLASSIFICATION_LIST, PASSWORD_EDIT, POST_CONTENT,
+    ACCOUNT_EDIT, ACCOUNT_INFO, ADD_REPLY, CLASS_INFO, CLASS_POSTS, LINK_LIST, PARENT_CLASSIFICATION_LIST,
+    PASSWORD_EDIT,
+    POST_CONTENT,
     PUBLISH_POSTS,
     REPLY_LIST,
     SIGN_ON,
@@ -167,4 +169,20 @@ export function getAllReply(data, action) {
  */
 export function publishReply(data, action) {
     post(ADD_REPLY, data, result => action(result.data))
+}
+
+
+/**
+ * 获取某个分类的信息
+ * @param id
+ * @param action
+ */
+export function getClassInfo(id, action) {
+    get(CLASS_INFO, {
+        cid: id
+    }, result => action(result.data))
+}
+
+export function getClassPosts(data, action) {
+    get(CLASS_POSTS, data, result => action(result.data))
 }

@@ -17,3 +17,5 @@ export const PARENT_CLASSIFICATION_LIST = ROOT + 'Home/Classification/getParentC
 export const POST_CONTENT = ROOT + "Home/Posts/getOnePosts";  //帖子详情
 export const REPLY_LIST = ROOT + "Home/Reply/getAllReply";  //获取某个帖子下的所有评论
 export const ADD_REPLY = ROOT + "Home/Reply/addReply";  //发表评论
+export const CLASS_INFO = ROOT + "Home/Classification/getOneClassification";    //获取某个分类的的信息
+export const CLASS_POSTS = ROOT + "Home/Posts/getClassificationPosts";  //获取某个分类下的帖子列表

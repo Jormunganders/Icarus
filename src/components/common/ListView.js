@@ -38,6 +38,13 @@ export class ListView extends React.Component {
     }
 
     render() {
+        if (this.state.data === null) {
+            return (
+                <div>
+                    没有数据
+                </div>
+            );
+        }
         const items = this.state.data.map((t, position) =>
             this.createItemView(position, t)
         );
