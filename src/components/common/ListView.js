@@ -38,7 +38,7 @@ export class ListView extends React.Component {
     }
 
     render() {
-        if (this.state.data === null) {
+        if (this.state.data === null || this.state.data === undefined) {
             return (
                 <div>
                     没有数据

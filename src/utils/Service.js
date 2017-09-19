@@ -1,6 +1,6 @@
 import axios from "axios";
 import {
-    ACCOUNT_EDIT, ACCOUNT_INFO, ADD_REPLY, CLASS_INFO, CLASS_POSTS, LINK_LIST, PARENT_CLASSIFICATION_LIST,
+    ACCOUNT_EDIT, ACCOUNT_INFO, ADD_REPLY, CLASS_INFO, CLASS_POSTS, CLASS_TREE, LINK_LIST, PARENT_CLASSIFICATION_LIST,
     PASSWORD_EDIT,
     POST_CONTENT,
     PUBLISH_POSTS,
@@ -183,6 +183,20 @@ export function getClassInfo(id, action) {
     }, result => action(result.data))
 }
 
+/**
+ * 获取某个分类下的帖子列表
+ * @param data
+ * @param action
+ */
 export function getClassPosts(data, action) {
     get(CLASS_POSTS, data, result => action(result.data))
+}
+
+/**
+ * 获取分类的子分类
+ * @param id
+ * @param action
+ */
+export function getClassTree(id, action) {
+    get(CLASS_TREE, {cid: id}, result => action(result.data))
 }

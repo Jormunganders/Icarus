@@ -8,7 +8,7 @@ class ClassItem extends React.Component {
     render() {
         return (
             <li>
-                <Link to={CLASS_INFO + "/" + this.props.data.cid}>
+                <Link to={CLASS_INFO + "/" + this.props.data.cid} onClick={this.props.onClick}>
                     {this.props.data.c_name}
                 </Link>
             </li>
