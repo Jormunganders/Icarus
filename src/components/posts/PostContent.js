@@ -27,7 +27,6 @@ class PostContent extends React.Component {
     }
 
     render() {
-        console.log(this.state.data);
         if (this.state.data === null || this.state.data === undefined) {
             return (<div>
                 未知错误
@@ -42,14 +41,18 @@ class PostContent extends React.Component {
                     <br/>
                     {this.state.data.content}
                     <br/>
-                    <PublishReply postsId={this.id}/>
+                    ---评论---
+                    <ReplyList postsId={this.id} ref="replyList"/>
+                    <PublishReply
+                        postsId={this.id}
+                        onPublish={() => {
+                            this.refs.replyList.update()
+                        }}/>
                 </div>
             );
         }
     }
 
 }
-
-//<ReplyList postsId={this.id}/>
 
 export default PostContent

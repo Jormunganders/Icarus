@@ -29,7 +29,8 @@ class PublishReply extends React.Component {
             if (result.status === 'ok') {
                 this.setState({
                     content: ''
-                })
+                });
+                this.props.onPublish()
             }
         })
     }

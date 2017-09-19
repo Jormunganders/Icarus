@@ -49,7 +49,8 @@ export function updateCurrentUser(user) {
     if (currentUser.username !== '' && currentUser.username !== undefined) {
         setSignOnState(true)
     } else {
-        setSignOnState(false)
+        setSignOnState(false);
+        console.log("Test");
     }
 }
 
@@ -88,20 +89,17 @@ function publish(data) {
 }
 
 export function getSignOnState() {
-    if (currentUser === null || currentUser === undefined ||
-        currentUser.username === null ||
-        currentUser.username === undefined ||
-        currentUser.username === '') {
-        updateCurrentUser({
-            username: getCookie("username"),
-            token: getCookie("token")
-        });
+    let username = getCurrentUser().username;
+    if (username === null || username === '' || username === undefined) {
+        setSignOnState(false)
+    } else {
+        setSignOnState(true)
     }
     return signOnState;
 }
 
 function setSignOnState(newState) {
-    let oldState = getSignOnState();
+    let oldState = signOnState;
     signOnState = newState;
     if (oldState !== newState) {
         publish({

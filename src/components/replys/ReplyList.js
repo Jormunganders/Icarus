@@ -18,6 +18,13 @@ class ReplyList extends ListView {
         })
     }
 
+    /**
+     * 重新加载数据
+     */
+    update() {
+        this.getListData(this.state)
+    }
+
     createItemView(position, data) {
         return {position};
     }
