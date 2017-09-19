@@ -1,5 +1,4 @@
 import React from "react";
-import SignOnVerify from "./account/SignOnVerify";
 import {ListView} from "./common/ListView";
 import {getLinkList, getRecommendPosts, getTopPosts} from "../utils/Service";
 import PostItemView from "./posts/PostItemView";
