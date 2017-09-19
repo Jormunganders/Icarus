@@ -1,6 +1,9 @@
 //评论列表
 import {ListView} from "../common/ListView";
 import {getAllReply} from "../../utils/Service";
+import {parseArray} from "../../utils/Utils";
+import * as React from "react";
+import ReplyItem from "./ReplyItem";
 
 class ReplyList extends ListView {
 
@@ -10,10 +13,9 @@ class ReplyList extends ListView {
             page: this.state.page,
             row: this.state.row
         }, result => {
-            console.log(result);
             if (result.status === 'ok' &&
                 result.data !== null && result.data !== undefined) {
-                this.setState({data: result.data})
+                this.setState({data: parseArray(result.data)})
             }
         })
     }
@@ -26,7 +28,7 @@ class ReplyList extends ListView {
     }
 
     createItemView(position, data) {
-        return {position};
+        return <ReplyItem data={data}/>;
     }
 }
 
