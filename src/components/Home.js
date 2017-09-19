@@ -17,7 +17,7 @@ class Home extends ListView {
     }
 
     createItemView(position, data) {
-        return (<PostItemView data={data}/>)
+        return (<PostItemView key={data.posts_id} data={data}/>)
     }
 }
 

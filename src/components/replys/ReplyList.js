@@ -28,7 +28,7 @@ class ReplyList extends ListView {
     }
 
     createItemView(position, data) {
-        return <ReplyItem data={data}/>;
+        return <ReplyItem key={data.rid} data={data}/>;
     }
 }
 
