@@ -2,6 +2,7 @@ import React from "react";
 import {ListView} from "./common/ListView";
 import {getLinkList, getRecommendPosts, getTopPosts} from "../utils/Service";
 import PostItemView from "./posts/PostItemView";
+import "./Home.css";
 
 class Home extends ListView {
 
@@ -71,7 +72,7 @@ class Home extends ListView {
             buttons[this.type] = null;
         }
         return (
-            <div>
+            <div className="home_box">
                 <ul>{buttons}</ul>
                 {super.render()}
             </div>

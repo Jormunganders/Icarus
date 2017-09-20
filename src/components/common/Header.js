@@ -7,17 +7,20 @@ import './Header.css';
 
 const Header = () => (
     <div>
-        <h2 className="header-title"><Link to={HOME}>Icarus</Link></h2>
-        <ul>
-            <li><Link to={SIGN_UP}>注册</Link></li>
-            <li><Link to={SIGN_ON}>登录</Link></li>
-            <li><Link to={ACCOUNT_INFO}>个人中心</Link></li>
-            <li><Link to={CLASS_LIST}>板块列表</Link></li>
-            <li><Link to={PUBLISH_POST}>发帖</Link></li>
-            <li><Link to={SEARCH}>搜索</Link></li>
-        </ul>
+         <div className="box">
+            <h2 className="header-title"><Link to={HOME}>Icarus</Link></h2>
+            <ul className="list">
+                <li><Link to={SIGN_UP}>注册</Link></li>
+                <li><Link to={SIGN_ON}>登录</Link></li>
+                <li><Link to={ACCOUNT_INFO}>个人中心</Link></li>
+                <li><Link to={CLASS_LIST}>板块列表</Link></li>
+                <li><Link to={PUBLISH_POST}>发帖</Link></li>
+                <li><Link to={SEARCH}>搜索</Link></li>
+            </ul>
+        </div>
         <hr/>
     </div>
+   
 );
 
 export default Header

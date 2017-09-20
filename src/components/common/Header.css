@@ -6,12 +6,23 @@
 }
 
 .header-title {
-    alignment: left;
-    color: #4a78da;
+    float: left;
+    color: #0F1F3D;
+    margin-top: -6px;
 }
 
 .account {
     alignment: right;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
 }
 
 .red {
@@ -20,4 +31,27 @@
 
 .black {
     color: black;
+}
+.box {
+    width: 100%;
+    /*height: 50px;*/
+    margin: 20px 45px;
+}
+
+.list {
+    margin-left: 150px;
+
+}
+
+.list li{
+    display: block;
+    float: left;
+    margin-right: 35px;
+}
+.list li a:hover{
+    text-decoration:block;
+}
+hr {
+    clear: both;
+
 }

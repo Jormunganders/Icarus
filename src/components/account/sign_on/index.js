@@ -5,7 +5,8 @@ import {getVerify, signOn} from "../../../utils/Service";
 import {delCookie, setCookie} from "../../../utils/CookieUtils";
 import {ACCOUNT_INFO} from "../../../utils/Mapx";
 import {updateCurrentUser} from "../../../utils/UserUtils";
-
+import "./index.css";
+//import {stylebox} from './style.js';
 class SignOn extends React.Component {
     constructor(props) {
         super(props);
@@ -51,22 +52,23 @@ class SignOn extends React.Component {
 
     render() {
         const message = this.state.message;
+
         return (
-            <div>
+            <div className="signon_box">
                 <ul>
                     <li>
-                        <div>
-                            Username:
-                            <EditText content={this.state.username}
+                        <div className="username">
+                            <label>Username:</label>
+                            <EditText className="edittext" content={this.state.username}
                                       onChange={
                                           value => this.setState({username: value})}/>
                         </div>
                     </li>
                     <br/>
                     <li>
-                        <div>
-                            Password:
-                            <EditText content={this.state.passwd}
+                        <div className="username">
+                        <label>Password:</label>
+                            <EditText className="edittext"  content={this.state.passwd}
                                       onChange={
                                           value => this.setState({passwd: value})
                                       }
@@ -75,14 +77,14 @@ class SignOn extends React.Component {
                     </li>
                     <br/>
                     <li>
-                        <div>
+                        <div className="img">
                             <Verify ref="verify"/>
                         </div>
                     </li>
                     <li>
-                        <div>
-                            Verify:
-                            <EditText content={this.state.verify}
+                        <div className="username">
+                        <label>Verify:</label>
+                            <EditText className="edittext"  content={this.state.verify}
                                       onChange={
                                           value => this.setState({verify: value})
                                       }/>
@@ -90,7 +92,7 @@ class SignOn extends React.Component {
                     </li>
                     <br/>
                     <li>
-                        <div>
+                        <div className="button">
                             <button onClick={this.handleSignOn}>SignOn</button>
                         </div>
                     </li>
