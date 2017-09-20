@@ -14,7 +14,9 @@ export class TextArea extends React.Component {
         const content = this.props.content;
         return (
             <div>
-                <textarea onChange={this.onChange} defaultValue={content}/>
+                <textarea
+                    className="content"
+                    onChange={this.onChange} defaultValue={content}/>
             </div>
         );
 

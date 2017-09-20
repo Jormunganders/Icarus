@@ -73,7 +73,10 @@ class Home extends ListView {
         }
         return (
             <div className="home_box">
-                <ul>{buttons}</ul>
+                <ul className="list">{buttons}</ul>
+                <br/>
+                <br/>
+                <br/>
                 {super.render()}
             </div>
         );

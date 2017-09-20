@@ -7,6 +7,7 @@ import {publishPost} from "../../../utils/Service";
 import {SelectList} from "./SelectList";
 import {getCurrentUser} from "../../../utils/UserUtils";
 import {HOME} from "../../../utils/Mapx";
+import "../../Home.css"
 
 class PublishPosts extends React.Component {
     constructor(props) {
@@ -42,33 +43,44 @@ class PublishPosts extends React.Component {
     }
 
     render() {
-        return (<div>
-            <SignOnVerify/>
-            <ul>
-                <li>
-                    标题：<EditText content={this.state.title}
-                                 onChange={
-                                     value => this.setState({title: value})
-                                 }/>
-                </li>
-                <li>
-                    关键字：（使用,隔开）
-                    <EditText content={this.state.keywords}
-                              onChange={
-                                  value => this.setState({keywords: value})
-                              }/>
-                </li>
-                <li>内容：
-                    <TextArea content={this.state.content}
-                              onChange={
-                                  value => this.setState({content: value})
-                              }/>
-                </li>
-                选择板块: <SelectList ref="selection" onChange={id => this.setState({classificationId: id})}/>
-                <br/>
-                <button onClick={this.handlePublish}>发布</button>
-            </ul>
-        </div>);
+        return (
+            <div className="home_box">
+                <SignOnVerify/>
+                <ul>
+                    <li>
+                        <h2>标题</h2>
+                        <br/>
+                        <EditText content={this.state.title}
+                                  onChange={
+                                      value => this.setState({title: value})
+                                  }/>
+                        <br/>
+                    </li>
+                    <li>
+                        <h3>关键字（使用,隔开）</h3>
+                        <br/>
+                        <EditText content={this.state.keywords}
+                                  onChange={
+                                      value => this.setState({keywords: value})
+                                  }/>
+                        <br/>
+                    </li>
+                    <li>
+                        <h3>内容</h3>
+                        <br/>
+                        <TextArea content={this.state.content}
+                                  onChange={
+                                      value => this.setState({content: value})
+                                  }/>
+                        <br/>
+                    </li>
+                    <h3>选择板块</h3>
+                    <br/>
+                    <SelectList ref="selection" onChange={id => this.setState({classificationId: id})}/>
+                    <br/>
+                    <button onClick={this.handlePublish}>发布</button>
+                </ul>
+            </div>);
     }
 
 }

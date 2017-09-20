@@ -55,9 +55,11 @@ class ClassInfo extends ListView {
             );
         }
         return (
-            <div>
+            <div className="home_box">
                 {message}
-                ---子板块---
+                <br/>
+                <hr/>
+                <h4>子版块</h4>
                 <ClassList ref="child"
                            id={this.id}
                            onChange={newId => {
@@ -66,7 +68,9 @@ class ClassInfo extends ListView {
                                this.refs.child.update(this.id);
                            }}/>
                 <br/>
-                ---帖子---
+                <hr/>
+                <h4>帖子列表</h4>
+                <br/>
                 {super.render()}
             </div>
         );

@@ -41,11 +41,11 @@ class SignUp extends React.Component {
     render() {
         const message = this.state.message;
         return (
-            <div>
+            <div className="signon_box">
                 <ul>
                     <li>
-                        <div>
-                            <text>Username:</text>
+                        <div className="username">
+                            <label>用户名</label>
                             <EditText content={this.state.username} onChange={
                                 value => this.setState({username: value})
                             }/>
@@ -53,8 +53,8 @@ class SignUp extends React.Component {
                     </li>
                     <br/>
                     <li>
-                        <div>
-                            <text>Email:</text>
+                        <div className="username">
+                            <label>邮箱</label>
                             <EditText content={this.state.email} onChange={
                                 value => this.setState({email: value})
                             }/>
@@ -62,8 +62,8 @@ class SignUp extends React.Component {
                     </li>
                     <br/>
                     <li>
-                        <div>
-                            <text>Password:</text>
+                        <div className="username">
+                            <label>密码</label>
                             <EditText
                                 type="password"
                                 content={this.state.password}
@@ -75,8 +75,8 @@ class SignUp extends React.Component {
                     </li>
                     <br/>
                     <li>
-                        <div>
-                            <button onClick={this.handleSignUp}>SignUp</button>
+                        <div className="button">
+                            <button onClick={this.handleSignUp}>注册</button>
                         </div>
                     </li>
                 </ul>

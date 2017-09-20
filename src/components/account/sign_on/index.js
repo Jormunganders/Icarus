@@ -6,6 +6,7 @@ import {delCookie, setCookie} from "../../../utils/CookieUtils";
 import {ACCOUNT_INFO} from "../../../utils/Mapx";
 import {updateCurrentUser} from "../../../utils/UserUtils";
 import "./index.css";
+
 //import {stylebox} from './style.js';
 class SignOn extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class SignOn extends React.Component {
                 <ul>
                     <li>
                         <div className="username">
-                            <label>Username:</label>
+                            <label>用户名</label>
                             <EditText className="edittext" content={this.state.username}
                                       onChange={
                                           value => this.setState({username: value})}/>
@@ -67,8 +68,8 @@ class SignOn extends React.Component {
                     <br/>
                     <li>
                         <div className="username">
-                        <label>Password:</label>
-                            <EditText className="edittext"  content={this.state.passwd}
+                            <label>密码</label>
+                            <EditText className="edittext" content={this.state.passwd}
                                       onChange={
                                           value => this.setState({passwd: value})
                                       }
@@ -83,8 +84,8 @@ class SignOn extends React.Component {
                     </li>
                     <li>
                         <div className="username">
-                        <label>Verify:</label>
-                            <EditText className="edittext"  content={this.state.verify}
+                            <label>验证码</label>
+                            <EditText className="edittext" content={this.state.verify}
                                       onChange={
                                           value => this.setState({verify: value})
                                       }/>
@@ -93,7 +94,7 @@ class SignOn extends React.Component {
                     <br/>
                     <li>
                         <div className="button">
-                            <button onClick={this.handleSignOn}>SignOn</button>
+                            <button onClick={this.handleSignOn}>登录</button>
                         </div>
                     </li>
                 </ul>
@@ -123,7 +124,7 @@ class Verify extends React.Component {
     render() {
         const url = this.state.url;
         return (
-            <img src={url} onClick={this.handleClick} alt="Verify"/>
+            <img src={url} onClick={this.handleClick}/>
         );
     }
 }

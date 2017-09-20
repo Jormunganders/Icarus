@@ -1,43 +1,55 @@
 
-button{
+button {
     border: none;
 }
 
 .signon_box {
-    width:26%;
-    margin: 100px auto;       
+    width: 26%;
+    margin: 100px auto;
     position: relative;
 }
+
+.center_box {
+    width: 26%;
+    margin: 100px auto;
+    position: relative;
+}
+
 input {
     width: 200px;
     height: 20px;
     /* float: right; */
 }
-.username div{
+
+.username div {
     /* margin-left: 20px; */
     display: inline-block;
     position: absolute;
     left: 100px;
 
 }
-label{
+
+label {
     display: inline-block;
     /* float: left; */
 }
-.img{
+
+.img {
     margin-left: 80px;
 }
-.button{
+
+.button {
     margin: 0 auto;
     text-align: center;
 }
+
 button {
     padding: 5px 50px;
     font-size: 20px;
     color: #fff;
-     border: 1px solid #999;
-     border-radius: 10px;
-     background: #4E2952;
-     cursor: pointer;
-     outline: none;
+    border: 1px solid #999;
+    border-radius: 10px;
+    background: #4E2952;
+    cursor: pointer;
+    outline: none;
 }

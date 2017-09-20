@@ -33,22 +33,25 @@ export class AccountEdit extends React.Component {
 
     render() {
         const user = getCurrentUser();
-        return (<div>
+        return (<div className="signon_box">
             <SignOnVerify/>
-            <h2>{user.username}</h2>
+            <h1>{user.username}</h1>
+            <br/>
             <ul>
-                <li>昵称：<EditText content={this.state.nickname}
-                                 onChange={
-                                     value => this.setState({
-                                         nickname: value
-                                     })
-                                 }/></li>
-                <li>邮箱：<EditText content={this.state.email}
-                                 onChange={
-                                     value => this.setState({
-                                         email: value
-                                     })
-                                 }/></li>
+                <li><h4>昵称</h4><br/><EditText content={this.state.nickname}
+                                              onChange={
+                                                  value => this.setState({
+                                                      nickname: value
+                                                  })
+                                              }/>
+                    <br/></li>
+                <li><h4>邮箱</h4><br/><EditText content={this.state.email}
+                                              onChange={
+                                                  value => this.setState({
+                                                      email: value
+                                                  })
+                                              }/>
+                    <br/></li>
             </ul>
             <button onClick={this.handleEdit}>保存修改</button>
             <br/>
@@ -90,28 +93,39 @@ export class PasswordEdit extends React.Component {
 
 
     render() {
-        return (<div>
+        return (<div className="signon_box">
                 <SignOnVerify/>
                 <ul>
-                    <li>旧密码：
+                    <li>
+                        <h4>旧密码</h4>
+                        <br/>
                         <EditText content={this.state.old_passwd}
                                   onChange={
                                       value => this.setState({old_passwd: value})
                                   }
                                   type="password"/>
+                        <br/>
                     </li>
-                    <li>新密码：
+                    <li>
+                        <h4>新密码</h4>
+                        <br/>
                         <EditText content={this.state.passwd}
                                   onChange={
                                       value => this.setState({passwd: value})
                                   }
-                                  type="password"/></li>
-                    <li>确认新密码：
+                                  type="password"/>
+                        <br/>
+                    </li>
+                    <li>
+                        <h4>确认新密码</h4>
+                        <br/>
                         <EditText content={this.state.repasswd}
                                   onChange={
                                       value => this.setState({repasswd: value})
                                   }
-                                  type="password"/></li>
+                                  type="password"/>
+                        <br/>
+                    </li>
                     <br/>
                     {this.state.message}
                     <br/>

@@ -42,6 +42,7 @@ class PublishReply extends React.Component {
                           onChange={
                               value => this.setState({content: value})
                           }/>
+                <br/>
                 <button onClick={this.handlePublish}>评论</button>
             </div>
         );

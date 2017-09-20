@@ -14,13 +14,16 @@
 .account {
     alignment: right;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
+
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
@@ -32,6 +35,7 @@ a {
 .black {
     color: black;
 }
+
 .box {
     width: 100%;
     /*height: 50px;*/
@@ -40,17 +44,18 @@ a {
 
 .list {
     margin-left: 150px;
-
 }
 
-.list li{
+.list li {
     display: block;
     float: left;
     margin-right: 35px;
 }
-.list li a:hover{
-    text-decoration:block;
+
+.list li a:hover {
+    text-decoration: block;
 }
+
 hr {
     clear: both;
 

@@ -24,7 +24,17 @@ export class UserPosts extends ListView {
     }
 
     createItemView(position, data) {
-        return (<PostItemView data={data}/>)
+        return (<PostItemView data={data}/>);
+    }
+
+    render() {
+        return (
+            <div className="home_box">
+                <h2>帖子列表</h2>
+                <br/>
+                {super.render()}
+            </div>
+        );
     }
 
 }

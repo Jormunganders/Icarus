@@ -1,6 +1,10 @@
-
-
 .home_box {
     width: 60%;
     margin: 50px auto;
+}
+
+.content {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
 }

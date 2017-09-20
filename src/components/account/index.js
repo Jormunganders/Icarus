@@ -32,11 +32,11 @@ export class Account extends React.Component {
     render() {
         const user = this.state.currentUser;
         return (
-            <div>
+            <div className="home_box">
                 <SignOnVerify/>
-                <h1>{user.user_nick}</h1>
-                用户名：<h2>{user.username}</h2>
-                邮箱： <h2>{user.email}</h2>
+                <h1>{user.username}</h1>
+                <br/>
+                <br/>
                 <h4 className="red">{this.state.message}</h4>
                 <ul>
                     <li><Link to={ACCOUNT_EDIT}>修改信息</Link></li>

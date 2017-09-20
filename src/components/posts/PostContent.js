@@ -34,15 +34,23 @@ class PostContent extends React.Component {
         }
         else {
             return (
-                <div>
+                <div className="home_box">
                     <h1>{this.state.data.title}</h1>
-                    <h2>作者：{this.state.data.author}</h2>
-                    <h4>关键字：{this.state.data.keywords}</h4>
+                    <br/>
+                    <h2>作者: {this.state.data.author}</h2>
+                    <br/>
+                    <h4>关键字: {this.state.data.keywords}</h4>
+                    <br/>
+                    <hr/>
                     <br/>
                     {this.state.data.content}
                     <br/>
-                    ---评论---
+                    <br/>
+                    <hr/>
+                    <h4>评论</h4>
+                    <br/>
                     <ReplyList postsId={this.id} ref="replyList"/>
+                    <br/>
                     <PublishReply
                         postsId={this.id}
                         onPublish={() => {

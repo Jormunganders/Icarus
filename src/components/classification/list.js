@@ -46,7 +46,7 @@ class ClassList extends ListView {
             );
         }
         return (
-            <div>
+            <div className="home_box">
                 {title}
                 <br/>
                 {super.render()}

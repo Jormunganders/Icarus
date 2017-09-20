@@ -4,6 +4,7 @@ import * as React from "react";
 import {EditText} from "../../common/EditText";
 import {search} from "../../../utils/Service";
 import PostItemView from "../PostItemView";
+import "../../account/sign_on/index.css"
 
 class Search extends ListView {
     constructor(props) {
@@ -39,9 +40,14 @@ class Search extends ListView {
 
     render() {
         return (
-            <div>
+            <div className="home_box">
+                <h2>请输入搜索内容</h2>
+                <br/>
                 <EditText content={this.state.content} onChange={value => this.setState({keywords: value})}/>
+                <br/>
                 <button onClick={this.handleSearch}>搜索</button>
+                <br/>
+                <br/>
                 {super.render()}
             </div>
         );
