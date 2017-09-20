@@ -6,6 +6,7 @@ import {getCurrentUser, updateCurrentUser} from "../../utils/UserUtils";
 import SignOut from "./SignOut";
 import {ACCOUNT_EDIT, PASSWORD_EDIT, USER_POSTS} from "../../utils/Mapx";
 import Link from "react-router-dom/es/Link";
+import "../common/list.css"
 
 export class Account extends React.Component {
 
@@ -39,10 +40,10 @@ export class Account extends React.Component {
                 <br/>
                 <h4 className="red">{this.state.message}</h4>
                 <ul>
-                    <li><Link to={ACCOUNT_EDIT}>修改信息</Link></li>
-                    <li><Link to={PASSWORD_EDIT}>修改密码</Link></li>
-                    <li><Link to={USER_POSTS}>我的帖子</Link></li>
-                    <li><SignOut onSignOut={
+                    <li className="item"><Link to={ACCOUNT_EDIT}>修改信息</Link></li>
+                    <li className="item"><Link to={PASSWORD_EDIT}>修改密码</Link></li>
+                    <li className="item"><Link to={USER_POSTS}>我的帖子</Link></li>
+                    <li className="item"><SignOut onSignOut={
                         () => {
                             this.setState({
                                 message: '账号已退出，请重新登录！'

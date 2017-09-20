@@ -4,12 +4,13 @@
 import React from "react";
 import Link from "react-router-dom/es/Link";
 import {POST_CONTENT} from "../../utils/Mapx";
+import "../common/list.css"
 
 class PostItemView extends React.Component {
 
     render() {
         return (
-            <li>
+            <li className="item">
                 <Link to={POST_CONTENT + "/" + this.props.data.posts_id}>
                     {this.props.data.title}
                 </Link>
