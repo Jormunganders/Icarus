@@ -2,7 +2,7 @@
 import * as React from "react";
 import Link from "react-router-dom/es/Link";
 import {CLASS_INFO} from "../../utils/Mapx";
-import "../common/list.css "
+import "../common/list.css"
 
 
 class ClassItem extends React.Component {

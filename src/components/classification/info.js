@@ -2,7 +2,7 @@ import {ListView} from "../common/ListView";
 import * as React from "react";
 import PostItemView from "../posts/PostItemView";
 import {getClassInfo, getClassPosts} from "../../utils/Service";
-import ClassList from "./list";
+import ChildClassList from "./ChildClassList";
 
 /**
  * 分类详情
@@ -60,13 +60,14 @@ class ClassInfo extends ListView {
                 <br/>
                 <hr/>
                 <h4>子版块</h4>
-                <ClassList ref="child"
-                           id={this.id}
-                           onChange={newId => {
-                               this.id = newId;
-                               this.getListData(this.state);
-                               this.refs.child.update(this.id);
-                           }}/>
+                <ChildClassList
+                    ref="child"
+                    id={this.id}
+                    onChange={newId => {
+                        this.id = newId;
+                        this.getListData(this.state);
+                        this.refs.child.update(this.id);
+                    }}/>
                 <br/>
                 <hr/>
                 <h4>帖子列表</h4>
